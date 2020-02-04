@@ -11,3 +11,7 @@ Click the links below to generate log entries.
 [Log4j](http://localhost:8080/instrumented-logs/log4j)  
 [Log4j2](http://localhost:8080/instrumented-logs/log4j2)  
 [SLF4J](http://localhost:8080/instrumented-logs/slf4j)  
+
+Deploying this application on Kubernetes will give you traces and logs.  Datadog will use the trace id for correlation.  The provided [manifest](kubernetes/instrumented-logs.yaml) will deploy the application and set up NGINX ingress if present.
+
+Log4j instrumentation is not automatically detected by standard pipelines.  You will need to add a [Tracer Remmaper](https://docs.datadoghq.com/logs/processing/processors/?tab=ui#trace-remapper) and set its trace id attribute to `mdc.dd.trace_id`.
