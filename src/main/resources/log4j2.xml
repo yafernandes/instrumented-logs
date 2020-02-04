@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <Configuration status="WARN">
 	<Appenders>
 		<Console name="Console" target="SYSTEM_OUT">
-			<JsonLayout complete="false" compact="true" eventEol="true" properties="true">
-			</JsonLayout>
+			<JsonLayout complete="false" compact="true" eventEol="true" properties="true"></JsonLayout>
 		</Console>
 	</Appenders>
 	<Loggers>

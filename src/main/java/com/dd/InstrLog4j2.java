@@ -11,8 +11,8 @@ public class InstrLog4j2 {
 
 	@Trace
 	public void doSomething() {
-//		ThreadContext.put(CorrelationIdentifier.getTraceIdKey(), CorrelationIdentifier.getTraceId());
-//		ThreadContext.put(CorrelationIdentifier.getSpanIdKey(), CorrelationIdentifier.getSpanId());
+		// ThreadContext.put(CorrelationIdentifier.getTraceIdKey(), CorrelationIdentifier.getTraceId());
+		// ThreadContext.put(CorrelationIdentifier.getSpanIdKey(), CorrelationIdentifier.getSpanId());
 		logger.info("Logging with log4j2");
 	}
 

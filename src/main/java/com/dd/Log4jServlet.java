@@ -13,9 +13,9 @@ public class Log4jServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-			new InstrLog4j().doSomething();
-			resp.setContentType("text/plain");
-			resp.getWriter().print("Logging with log4j");
+		new InstrLog4j().doSomething();
+		resp.setContentType("text/plain");
+		resp.getWriter().print("Logging with log4j");
 	}
 
 }
