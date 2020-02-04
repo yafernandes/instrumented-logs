@@ -11,8 +11,6 @@ public class InstrSlf4j {
 
 	@Trace
 	public void doSomething() {
-		// MDC.put(CorrelationIdentifier.getTraceIdKey(), CorrelationIdentifier.getTraceId());
-		// MDC.put(CorrelationIdentifier.getSpanIdKey(), CorrelationIdentifier.getSpanId());
 		logger.info("Logging with slf4j");
 	}
 
