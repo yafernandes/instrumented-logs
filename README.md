@@ -14,4 +14,4 @@ Click the links below to generate log entries.
 
 Deploying this application on Kubernetes will give you traces and logs.  Datadog will use the trace id for correlation.  The provided [manifest](kubernetes/instrumented-logs.yaml) will deploy the application and set up NGINX ingress if present.
 
-Log4j instrumentation is not automatically detected by standard pipelines.  You will need to add a [Tracer Remmaper](https://docs.datadoghq.com/logs/processing/processors/?tab=ui#trace-remapper) and set its trace id attribute to `mdc.dd.trace_id`.
+Log4j instrumentation is not automatically detected by standard pipelines.  Edit the `Reserved attributes mapping` and add `mdc.dd.trace_id` to `Trace Id attributes`.
