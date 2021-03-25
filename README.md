@@ -10,4 +10,4 @@ You can also run it on a Kubernetes cluster.
 
 `kubectl run instrumented-logs --image=yaalexf/instrumented-logs`
 
-Log4j instrumentation is not automatically detected by standard pipelines.  Edit the `Reserved attributes mapping` and add `mdc.dd.trace_id` to `Trace Id attributes`.
+:warning: Log4j instrumentation is not automatically detected by standard pipelines.  Edit [Preprocessing for JSON logs](https://app.datadoghq.com/logs/pipelines/remapping) and add `mdc.dd.trace_id` to `Trace Id attributes`.
