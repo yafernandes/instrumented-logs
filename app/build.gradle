@@ -1,0 +1,38 @@
+plugins {
+    id 'application'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
+}
+
+repositories {
+    jcenter()
+}
+
+// applicationDefaultJvmArgs = ["-javaagent:/Users/alex.fernandes/java-lib/dd-java-agent.jar"]
+
+dependencies {
+
+    implementation group: 'com.datadoghq', name: 'dd-trace-api', version: '0.76.0'
+
+// slf4j
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.30'
+    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+    implementation group: 'net.logstash.logback', name: 'logstash-logback-encoder', version: '6.6'
+
+// Log4j2
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.14.1'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.12.2'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.10.2'
+
+// Log4j
+    implementation group: 'log4j', name: 'log4j', version: '1.2.17'
+    implementation group: 'net.logstash.log4j', name: 'jsonevent-layout', version: '1.7'   
+}
+
+application {
+    mainClass = 'datadog.ese.App'
+}

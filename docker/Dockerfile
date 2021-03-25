@@ -1,7 +1,8 @@
-FROM openjdk:8-alpine
-COPY application.jar /application.jar
-COPY dd-java-agent.jar /dd-java-agent.jar
+FROM openjdk:11-slim
+ADD app/build/distributions/app.tar /
+WORKDIR /app
+ADD https://dtdg.co/latest-java-tracer /dd-java-agent.jar
 ENV DD_LOGS_INJECTION true
 ENV DD_SERVICE_NAME instrumented-logs
-CMD [ "java", "-javaagent:dd-java-agent.jar", "-jar", "application.jar"]
-EXPOSE 8080
+ENV JAVA_OPTS -javaagent:/dd-java-agent.jar
+CMD [ "bin/app" ]
